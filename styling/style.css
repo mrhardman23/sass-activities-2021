@@ -15,7 +15,15 @@ nav a {
   padding: 20px;
 }
 
-nav .active {
+nav a:hover, nav a:focus {
+  background-color: yellow;
+}
+
+nav a:active {
+  color: red;
+}
+
+nav #active {
   color: #B314DB;
   font-weight: bold;
   font-size: 24px;
