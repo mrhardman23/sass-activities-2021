@@ -1,12 +1,15 @@
+// ../ is to go back one level in the folder structure
+@import "../utils/mixins";
+
 nav {
-    display: flex;
+    @include flex_container;
 
     // I use the variable defined above to give a value for background-color
     background-color: $nav-background-color;
 
     // This is equal to typing nav a { } in a CSS file
     a {
-        flex: 1;
+        @include flex_item_sizing;
 
         text-decoration: none;
         text-transform: uppercase;
@@ -15,11 +18,11 @@ nav {
         padding: 20px;
 
         &:hover, &:focus {
-            background-color: yellow;
+            background-color: adjust-color($color: yellow, $lightness: -15%);
         }
 
         &:active {
-            color: red;
+            color: adjust-color($color: red, $lightness: -25%);
         }
     }
 

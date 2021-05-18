@@ -1,42 +1,15 @@
 // Mr. Hardman
+@import "utils/variables";
+@import "base/base";
+@import "components/navigation";
 
-// SASS variables for colors
-$nav-background-color: #F8F594;
-$active-link-color: #B314DB;
-$article-heading-color: #5d12e7;
-$article-paragraph-color: #316901;
-
-nav {
-    display: flex;
-
-    // I use the variable defined above to give a value for background-color
-    background-color: $nav-background-color;
-
-    // This is equal to typing nav a { } in a CSS file
-    a {
-        flex: 1;
-
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 20px;
-
-        padding: 20px;
-
-        &:hover, &:focus {
-            background-color: yellow;
-        }
-
-        &:active {
-            color: red;
-        }
-    }
-
-    // Element with id active in the nav bar has this styling
-    #active {
-        color: $active-link-color;
-        font-weight: bold;
-        font-size: 24px;
-    }
+%button_common {
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    border-style: none;
+    cursor: pointer;
 }
 
 article {
@@ -53,4 +26,19 @@ article {
         font-size: 20px;
     }
     
+}
+
+#btn-success {
+    @extend %button_common;
+    background-color: darkgreen;
+}
+
+#btn-warning {
+    @extend %button_common;
+    background-color: darkgoldenrod;
+}
+
+#btn-error {
+    @extend %button_common;
+    background-color: darkred;
 }
